@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax练习</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		//1.实例化一个XMLHttpRequest对象
+		var request;
+		if(window.XMLHttpRequest){
+			request = new XMLHttpRequest();//IE7+,Firefox,Chrome,Opera,Safari
+		}else{
+			request = new ActiveXObject("Microsoft.XMLHTTP");//IE6,IE5
+		}
+
+		//2.调用open、send等方法 且通过onreadyStatechange事件对readyState进行监听
+		request.open("GET","get.php",true); //true可以默认不写
+		request.send();
+		request.onreadystatechange = function(){  //监听readyState属性的变化,readyState变化时触发此事件
+			//request.readyState === 4 请求已完成 request.status === 200 请求成功
+			if(request.readyState === 4 && request.status === 200){
+				//做一些事情
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

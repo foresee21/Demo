@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax学习</title>
+	<script type="text/javascript" src="../Scripts/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("#search").click(function(){
+			$.ajax({
+				type:"GET",
+				url:"service_json.php?number="+$("#key").val(),
+				dataType:"json",
+				success:function(data){//服务器返回的json格式的数据，已经解析好了，可以直接用
+					if(data.success){
+						$("#sResult").html(data.msg);
+					}else{
+						$("#sResult").html("出现错误："+data.msg);
+					}
+				},
+				error:function(jqXHR){//此函数返回一个jq的XMLHttpRequest对象
+					alert("发生错误:"+jqXHR.status);
+				}
+			});
+		});
+
+		$("#add").click(function(){
+			$.ajax({
+				type:"POST",
+				url:"service_json.php",
+				dataType:"json",
+				data:{
+					name:$("#staffName").val(),
+					number:$("#staffNumber").val(),
+					sex:$("#staffSex").val(),
+					job:$("#staffJob").val()
+				},
+				success:function(data){
+					if(data.success){
+						$("#aResult").html(data.msg);
+					}else{
+						$("#aResult").html("出现错误："+data.msg);
+					}
+				},
+				error:function(jqXHR){
+					alert("发生错误:"+jqXHR.status);
+				}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<h1>员工查询</h1>
+	<label>请输入员工编号：</label>
+	<input id="key" type="text" /><br/>
+	<button id="search">查询</button><br/>
+	<p id="sResult"></p>
+	
+	<h1>员工创建</h1>
+	<label>请输入员工姓名：</label>
+	<input id="staffName" type="text" /><br/>
+	<label>请输入员工编号：</label>
+	<input id="staffNumber" type="text" /><br/>
+	<label>请选择员工性别：</label>
+	<select id="staffSex">
+		<option>男</option>
+		<option>女</option>
+	</select><br/>
+	<label>请输入工职位：</label>
+	<input id="staffJob" type="text" /><br/>
+	<button id="add">增加</button> <br/>
+	<p id="aResult"></p>
+	<!--
+
+	<script type="text/javascript">
+	document.getElementById("search").onclick = function(){
+		var request = new XMLHttpRequest();
+		//request.open("GET","service.php?number="+document.getElementById("key").value);
+
+		request.open("GET","service_json.php?number="+document.getElementById("key").value);
+		request.send();
+		request.onreadystatechange = function(){
+			if(request.readyState === 4){
+				if(request.status === 200){
+					//document.getElementById("sResult").innerHTML = request.responseText;
+					var data = JSON.parse(request.responseText);//解析服务器传回来的json格式的报文
+					if(data.success){
+						document.getElementById("sResult").innerHTML = data.msg;
+					}else{
+						document.getElementById("sResult").innerHTML = "出现错误"+data.msg;
+					}
+				}else{
+					alert("发生错误:"+request.status);
+				}
+			}
+		}
+	}
+
+	document.getElementById("add").onclick = function(){
+		var request = new XMLHttpRequest();
+		//request.open("POST","service.php");
+		request.open("POST","service_json.php");
+		var data = "name="+document.getElementById("staffName").value+
+					"&number="+document.getElementById("staffNumber").value+
+					"&sex="+document.getElementById("staffSex").value+
+					"&job="+document.getElementById("staffJob").value;
+		request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		request.send(data);
+		request.onreadystatechange = function(){
+			if(request.readyState === 4){
+				if(request.status === 200){
+					//document.getElementById("aResult").innerHTML = request.responseText;
+					var data = JSON.parse(request.responseText);//解析服务器传回来的json格式的报文
+					if(data.success){
+						document.getElementById("aResult").innerHTML = data.msg;
+					}else{
+						document.getElementById("aResult").innerHTML = "出现错误"+data.msg;
+					}
+				}else{
+					alert("发生错误:"+request.status);
+				}
+			}
+		}
+	}
+	</script>
+
+	-->
+</body>
+</html>

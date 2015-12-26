@@ -1,0 +1,63 @@
+*{margin: 0;padding: 0;font-size: 14px}
+#header{
+	height: 81px;
+	background-color: #f0fff0;
+	border-bottom: 1px black solid;
+	position: relative;
+}
+#header_img{
+	width: 100%;
+	height: 41px;
+	background-color: #fff0f5;
+	position:absolute;
+	top: 20px;
+	text-align: left;
+}
+#header_img img{
+	width: 150px;
+	height: 41px;
+}
+
+
+#login_main{
+	background-image: url(../img/tubiao.jpg);
+	height: 560px;
+	position: relative;
+}
+#login_main form{
+	width: 420px;
+	height: 490px;
+	background: #fff;
+	position: absolute;
+	top: 20px;
+	right: 100px;
+}
+#login_main h3{
+	height: 45px;
+	background: #66CD00;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bolder;
+	line-height: 45px;
+	text-align: center;
+}
+
+
+#footer{
+	height: 81px;
+	background: #fff;
+	margin: 25px 0;
+}
+#footer p{
+	text-align: center;
+	font-size: 12px;
+	color: #777;
+	line-height: 18px;
+	font-family: "微软雅黑"
+}
+#footer a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #777;
+	font-family: "微软雅黑";
+}

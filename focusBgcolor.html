@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>可以设置li被选中时的背景色</title>
+	<script type="text/javascript" src="../jQuery__/jquery-2.1.4.min.js"></script>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			font-size:20px;
+			font-weight:bold;
+		}
+		ul{
+			width:350px;
+			background:#F0FFF0;
+		}
+		ul li{
+			width:350px;
+			height:25px;
+			background:#DEDEDE;
+			margin-bottom:10px;
+			margin-top:10px;
+
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			//$.extend与$.fn.extend的区别，$.extend中的this指向$(既jQuery)，$.fn.extend中的this指向你要操作的dom节点
+			$.extend({            //利用$.extend()方法拓展出一个工具函数
+				"focusBgColor" : function(color){
+					var oldColor = $("li").css("background");
+					$("li").bind("mouseover",function(){
+						$(this).css("background",color);
+					})
+					$("li").bind("mouseout",function(){
+						$(this).css("background",oldColor);
+					})
+				}
+			})
+			$.focusBgColor("#FFFFFF")
+		})
+	</script>
+</head>
+<body>
+	<div id="main">
+		<ul id="ul1">
+			<li>少年听雨歌楼上</li>
+			<li>红烛昏罗帐</li>
+			<li>壮年听雨客舟中</li>
+			<li>江阔云低 断雁啸西风</li>
+			<li>而今听雨僧庐下</li>
+			<li>鬓已星星也</li>
+			<li>悲欢离合总无情 一任阶前点滴到天明</li>
+		</ul>
+	</div>
+</body>
+</html>
