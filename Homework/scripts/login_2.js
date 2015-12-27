@@ -1,0 +1,20 @@
+$(function({
+	$("#sub").click(function({
+		$.ajax({
+			type:"GET",
+			url:"**.java?usename="+$("#username").val()+"$password="+$("#pass").val(),
+			dataType:"json",
+			success:function(data){
+				if(data.success){
+					$("h3").html("登陆成功！！！");
+					window.open(data.url,"登录成功的页面");
+				}else{
+					$("h3").html("出现错误");
+				}
+			},
+			error:function(jqXHR){
+				alert("发生错误"+jqXHR.status);
+			}
+		});
+	}))
+}));

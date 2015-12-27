@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>前后交互练习</title>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		/*$("#add").click(function(){
+			window.open("http://www.baidu.com","baidu"); 
+			$.ajax({
+				type:"GET",
+				url:"lujing?title="+$("#title").val(),
+				dataType:"json",
+				success:function(data){//服务器返回的json格式的数据，已经解析好了，可以直接用
+					if(data.success){
+						window.open(data.url,"新建的");
+					}else{
+						console.log("error");
+					}
+				},
+				error:function(jqXHR){//此函数返回一个jq的XMLHttpRequest对象
+					alert("发生错误:"+jqXHR.status);
+				}
+			})
+		})*/
+	var url = window.location.search; 
+	console.log(url);
+	// alert(url.length); 
+	// alert(url.lastIndexOf('=')); 
+	var loc = url.substring(url.lastIndexOf('=')+1, url.length); 
+	console.log(loc);
+	})
+	</script>
+</head>
+<body>
+	<input id="title" name="title"type="text" />
+	<button id="add">提交</button>
+</body>
+</html>

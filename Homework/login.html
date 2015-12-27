@@ -3,18 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>用户登录-在路上</title>
+	<script type="text/javascript" src="../Homework/scripts/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../Homework/scripts/login.js"></script>
+	<script type="text/javascript" src="../Homework/scripts/login.js"></script>
 	<link rel="stylesheet" type="text/css" href="../Homework/css/login.css">
 </head>
 <body>
 	<div id="header">
 		<div id="header_img">
-			<a href="../Homework/zailushang.html"><img src="../Homework/img/tubiao.jpg"></a>
+			<a href="../Homework/zailushang.html">
+				<img src="../Homework/img/tubiao.jpg" />
+			</a>
 		</div>
 	</div>
 	<div id="login_main">
+		<ul id="imgs">
+			<li><img src="../Homework/img/back_1.jpg"></li>
+			<li><img src="../Homework/img/back_2.jpg"></li>
+			<li><img src="../Homework/img/back_3.jpg"></li>
+		</ul>
+		
 		<form method="GET" action="login.php">
-			<h3>在路上</h3>
+			<h3>在路上用户登录</h3>
+			<label>用户名：</label>
+			<input type="text" id="username" class="inp" /><br/>
+			<label>密码</label>
+			<input type="password" id="pass" class="inp" /><br/>
+			<button id="sub">登录</button>
 		</form>
+
+		<ul id="img_btn">
+			<li><div></div></li>
+			<li><div></div></li>
+			<li><div></div></li>
+		</ul>
 	</div>
 	<div id="footer">
 		<p>24小时客户服务电话(免长途费)：188-4454-6335 （看心情接不接）在路上呼叫中心位于长春来电将统一显示为&nbsp;额没人看</p>
