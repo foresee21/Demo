@@ -2,28 +2,27 @@
 #header{
 	height: 81px;
 	background-color: #fff;
-	border-bottom: 1px black solid;
 	position: relative;
 }
 #header_img{
 	width: 100%;
-	height: 41px;
+	height: 60px;
 	background-color: #fff;
 	position:absolute;
-	top: 20px;
+	top: 10px;
+	left: 20px;
 	text-align: left;
 }
 #header_img img{
-	width: 150px;
-	height: 41px;
+	width: 140px;
+	height: 60px;
 }
-
 
 #login_main{
 	height: 560px;
 	position: relative;
 }
-#login_main form{
+#login_main #login_content{
 	width: 420px;
 	height: 490px;
 	background: #fff;
@@ -31,7 +30,18 @@
 	top: 20px;
 	right: 100px;
 }
-#login_main h3{
+#login_main #form{
+	width: 420px;
+	height: 380px;
+	background: #fff;
+	border-bottom: 1px solid #EEE5DE;
+}
+#login_main #form li{
+	display: inline-block!important;
+	width: 210px;
+	list-style: none;
+}
+#login_main #form li>p{
 	height: 45px;
 	background: #66CD00;
 	color: #fff;
@@ -39,7 +49,147 @@
 	font-weight: bolder;
 	line-height: 45px;
 	text-align: center;
+	font-weight: lighter; 
 }
+#login_main #form li#denglu_p{
+	float: right;
+}
+#login_main #form li#denglu_p>p{
+	background: #fff;
+	color: #66CD00;
+}
+#login_main table#d_card{
+	display: table;
+	width: 282px;
+	height: 274px;
+	border:0px;
+	position: absolute;
+	top: 80px;
+	left: 66px;
+	font-size: 12px;
+	display: block;
+}
+#login_main table#z_card{
+	display: table;
+	width: 282px;
+	height: 274px;
+	border:0px;
+	position: absolute;
+	top: 80px;
+	left: 66px;
+	font-size: 12px;
+	display: none;
+}
+#login_main table tr{
+	height: 44px;
+}
+#login_main input{
+	background-image: url(../img/login_icon.png);	
+	background-repeat: no-repeat;
+	height: 22px;
+	line-height: 22px;
+	width: 240px;
+	border: 0px;
+	display: inline-block;
+	padding: 5px 0 5px 40px;
+	font-size: 12px;
+}
+#username_d,#username_z{background-position:12px -12px;}
+#pass_d,#pass_z,#repass_z{background-position:12px -52px;}
+#login_main #validate{background-position:12px -92px;width: 160px;}
+#yanzheng{
+	display: inline-block;
+	vertical-align: middle;
+}
+#login_main input#remember{
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+}
+#login_main #line4 label,a{
+	vertical-align: middle;
+	font-size: 14px;
+	height: 14px;
+	line-height: 14px;
+	color:#999;
+}
+#login_main #line4 a{
+	text-decoration: none;
+	color: black;
+	cursor: auto;
+	float: right;
+	font-size: 12px;
+	position: relative;
+	top: 2px;
+}
+#login_main #line4 a:hover{
+	color: #76EE00;
+}
+#login_main .line5 button{
+	width: 282px;
+	height: 40px;
+	font-size: 20px;
+	background: #FF8C00;
+	border:0px;
+	color: #fff;
+	cursor: pointer;
+}
+#login_main #line6 p{
+	display: inline-block;
+}
+#login_main #line6 a#zhuce{
+	color: #FF8C00;
+	text-decoration: none;
+}
+#login_main #line6 a#hezuo{
+	color: #66CD00;
+}
+#login_main #z_card #info{
+	height: 20px;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: lighter; 
+	color: #EEEED1;
+	border: 1px solid black;
+}
+.input_div{	
+	border:1px solid #C5C1AA;
+}
+#login_main #partener{
+	height: 80px;
+	width: 282px;
+	position: absolute;
+	left: 66px;
+	padding-top: 20px;
+	color: #999;
+}
+#login_main #partener ul{
+	list-style: none;
+	width: 100px;
+	height: 50px;
+}
+#login_main #partener ul li{
+	background: url(../img/login_theme.png);
+	width: 35px;
+	height: 35px;
+	margin-top: 15px;
+	margin-left: 10px;
+	display: inline-block;
+}
+#login_main #partener ul li#ten{
+	background-position:-158px 0px;
+}
+#login_main #partener ul li#xin{
+	background-position:0px 0px;
+	float: right;
+}
+#login_main #partener ul a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+}
+
+
 #login_main #imgs{
 	list-style: none;
 }

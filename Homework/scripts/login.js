@@ -49,7 +49,7 @@ window.onload = function(){
         timer=null;
 
       // 定义并调用自动播放函数
-    timer = setInterval(autoPlay,1000) ;
+    timer = setInterval(autoPlay,2000) ;
 
      // 鼠标划过整个容器时停止自动播放
     wrap.onmouseover = function(){
